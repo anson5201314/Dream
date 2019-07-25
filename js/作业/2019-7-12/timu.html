@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			1.我想买车，买什么车决定于我在银行有多少存款，
+			如果我的存款超过 500万，我就买凯迪拉克，
+			否则，如果我的存款超过 100万，我就买帕萨特，
+			否则， 如果我的存款超过50万，我就买依兰特，
+			否则， 如果我的存款超过10万，我就买奥托，
+			否则， 如果我的存款10万以下 ，我买捷安特
+			 */
+			/*定义函数的关键词*/
+			function work1(){
+				var money=prompt("请输入你的银行存款：(万)");
+				money=parseFloat(money);
+				if(money>500){
+					alert("买凯迪拉克");
+				}
+				else if(money>100){
+					alert("买帕萨特");
+				}
+				else if(money>50){
+					alert("买依兰特");
+				}
+				else if(money>10){
+					alert("买买奥托");
+					
+				}
+				else{
+					alert("买捷安特");
+				}
+			}
+//			work1();
+			/*
+			 2. 编写程序，模拟下述分段函数，输入x，输出正确的y值
+				y = 2x + 1 (x < 0),
+				y = x ^ 2 * 5 (0 <= x < 5) ,
+				y =3x - 6(x >= 5)
+			*/
+			function work2(){
+				var x=prompt("请输入一个数x值：");
+				var y;
+				if(x<0){
+					y=2*x + 1;
+				}
+				else if(x>=0&&x<5){
+					y = x*x * 5;
+				}
+				else{
+					y =3*x - 6;
+				}
+				alert("y的值："+y);
+			}
+//			work2();
+			/*
+			 * 3、输入一个三位数，如果是水仙花数，输出YES，
+			 * 否则的话，输出NO;所谓的水仙花数是指 每一位的数字立方和等于
+			 * 这位数本身。例如 153 = 1^3+5^3+3^3
+			 */
+			function work3(){
+				var num=prompt("请输入一个三位数：");
+				num=parseInt(num);
+				/*存放三位数中的百位数值*/
+				var a=parseInt(num/100);
+				/*存放三位数中的十位数值*/
+				var b=parseInt(num/10%10);
+				/*存放三位数中的个位数值*/
+				var c=parseInt(num%10);
+				var num1=a*a*a+b*b*b+c*c*c;
+				/*先判断输入的数字是否为三位数*/
+				if(num>=100&&num<=999){
+					if(num==num1){
+						alert(num+"是一个水仙花数");
+					}
+					else{
+						alert(num+"不是一个水仙花数");
+					}
+				}
+				else{
+					alert("你输入的不是三位数");
+				}
+			}
+//			work3();
+			/*
+			 * 4、输入3个数a,b,c；输出最大的数
+			 */
+			function work4(){
+				var a=prompt("请输入a的值：");
+				var b=prompt("请输入b的值：");
+				var c=prompt("请输入c的值：");
+				if(a>b){
+					if(a>c){
+						alert("最大的值："+a);
+					}
+					else{
+						alert("最大的值："+c);
+					}
+				}
+				else{
+					if(b>c){
+						alert("最大的值："+b);
+					}
+					else{
+						alert("最大的值："+c);
+					}
+				}
+				
+			}
+//			work4();
+			/*
+			 * 5、东方航空从北京飞往马尔代夫的机票原价为4000元，
+			 * 4到10月份为旺季， 其他月份为淡季，旺季时候头等舱打9折，
+			 * 经济舱打7.5折；淡季头等舱打6折， 经济舱打3折。
+			 * 从页面输入出行的月份和选择的舱型计算出机票价格
+
+			 */
+			function work5(){
+				/*存放月份的变量*/
+				var month=prompt("请输入你出行的月份：");
+				var ticke=prompt("请输入你是坐头等舱还是经济舱：");
+				/*先判断输入的月份是否正确*/
+				if(month>=1&&month<=12){
+					/*如果是旺季，则打折的情况*/
+					if(month>=4&&month<=10){
+						if(ticke=='头等舱'){
+							console.log(4000*0.6);
+						}
+						else if(ticke=='经济舱'){
+							console.log(4000*0.3);
+						}
+						else{
+							alert("你的坐的舱位错误");
+						}
+					}
+					/*如果是淡季，则打折的情况*/
+					else{
+						if(ticke=='头等舱'){
+							console.log(4000*0.9);
+						}
+						else if(ticke=='经济舱'){
+							console.log(4000*0.75);
+						}
+						else{
+							alert("你的坐的舱位错误");
+						}
+					}
+				}
+				else{
+					alert("你的月份输入错误");
+				}
+			}
+//			work5();
+			/*
+			 * 6、判断一个整数是偶数还是奇数，并输出判断结果
+
+			 */
+			function work6(){
+				var num=prompt("请输入一个整数：");
+				num=parseInt(num);
+				if(isNaN(num)){
+					console.log("你输入的不是一个数：");
+				}
+				else{
+					if(num%2==0){
+						console.log(num+"是一个偶数");
+					}
+					else{
+						console.log(num+"不是一个偶数");
+					}
+				}
+			}
+//			work6();
+			/*
+			 * 7、开发一款软件，输入身高，根据公式（身高-108）*2=体重，
+			 * 可以有10斤左右的浮动。来观察测试者是否超重
+
+			 */
+			function work7(){
+				var height=prompt("请输入你的身高：(cm)");
+				/*输入你的真实体重*/
+				var weight=prompt("请输入你的体重：(斤)");
+				var t_weight=(height-108)*2;
+				/*真实体重和计算出来的体重之间的误差*/
+				var wc=weight-t_weight;
+				if(wc>10){
+					console.log("你该减肥了，超重");
+				}
+				else if(wc<-10){
+					console.log("营养不良，多补补");
+				}
+				else{
+					console.log("体重正常");
+				}
+			}
+//			work7();
+			/*8、输入a,b,c的值，求出一元二次方程的实根
+			方程ax2+bx+c=0;一元二次方程。求根
+			△=b2-4ac；若△<0方程无实根
+			若△>0，方程有两个不相同的实根x1   x2
+			若△=0，方程有两个相同的实根
+			某个数进行开平方——Math.Sqrt()
+			求根公式：（-b±Math.Sqrt(△)）/2a
+			*/
+			function work8(){
+				var a=prompt("请输入a的值：");
+				var b=prompt("请输入b的值：");
+				var c=prompt("请输入c的值：");
+				var delt=b*b-4*a*c;
+				if(a!=0){
+					if(delt<0){
+						console.log("没有实根");
+					}
+					else if(delt==0){
+						var x=(-b)/(2*a);
+						console.log("有一个实根："+x);
+					}
+					else{
+						var x1=(-b+Math.sqrt(delt))/(2*a);
+						var x2=(-b-Math.sqrt(delt))/(2*a);
+						console.log("有两个实根：分别是x1="+x1+",x2="+x2);
+					}
+				}
+				else{
+					console.log("a不能输入0,不是一元二次方程");
+				}
+				
+			}
+			work8();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+<h2>中国梦，我的梦</h2>
+<h2>印象西湖</h2>
+<!--
+form 表单标签，用于提交
+method  设置请求的方法  可以post可以get
+action 设置请求的url
+name  数据的名称
+-->
+<form method="get" action="/mylogin">
+用户:<input type="text" name="uname"><br>
+密码:<input type="text" name="upwd"><br>
+<input type="submit">
+</form>
